@@ -16,6 +16,9 @@ from gymnasium.wrappers import (
 )
 
 from gymnasium.wrappers.frame_stack import FrameStack
+from gymnasium.wrappers.transform_observation import TransformObservation, ResizeObservation, GrayScaleObservation, NormalizeObservation
+from gymnasium.wrappers.transform_action import ClipAction
+from gymnasium.wrappers.transform_reward import TransformReward, NormalizeReward
 
 def make_env(
     env_id: str,
