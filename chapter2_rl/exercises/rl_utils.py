@@ -5,7 +5,8 @@ from tqdm import tqdm
 import numpy as np
 from IPython.display import HTML
 
-from gymnasium.wrappers.transform_observation import TransformObservation, ResizeObservation, GrayscaleObservation, NormalizeObservation
+from gymnasium.wrappers.transform_observation import TransformObservation, ResizeObservation, GrayscaleObservation
+from gymnasium.wrappers.stateful_observation import FrameStackObservation, NormalizeObservation
 from gymnasium.wrappers.transform_action import ClipAction
 from gymnasium.wrappers.transform_reward import TransformReward, NormalizeReward
 
@@ -56,7 +57,7 @@ def prepare_atari_env(env: gym.Env):
     env = ClipRewardEnv(env)
     env = ResizeObservation(env, shape=(84, 84))
     env = GrayScaleObservation(env)
-    # env = FrameStack(env, num_stack=4)
+    env = FrameStackObservation(env, stack_size=4)
     return env
 
 
