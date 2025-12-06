@@ -8,7 +8,8 @@ from IPython.display import HTML
 from gymnasium.wrappers.transform_observation import TransformObservation, ResizeObservation, GrayscaleObservation
 from gymnasium.wrappers.stateful_observation import FrameStackObservation, NormalizeObservation
 from gymnasium.wrappers.transform_action import ClipAction
-from gymnasium.wrappers.transform_reward import TransformReward, NormalizeReward
+from gymnasium.wrappers.transform_reward import TransformReward
+from gymnasium.wrappers.stateful_reward import NormalizeReward
 
 def make_env(
     env_id: str,
