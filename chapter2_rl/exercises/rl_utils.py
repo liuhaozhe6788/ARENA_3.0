@@ -5,16 +5,6 @@ from tqdm import tqdm
 import numpy as np
 from IPython.display import HTML
 
-from gymnasium.wrappers import (
-    ClipAction,
-    GrayScaleObservation,
-    NormalizeObservation,
-    NormalizeReward,
-    ResizeObservation,
-    TransformObservation,
-    TransformReward,
-)
-
 from gymnasium.wrappers.frame_stack import FrameStack
 from gymnasium.wrappers.transform_observation import TransformObservation, ResizeObservation, GrayScaleObservation, NormalizeObservation
 from gymnasium.wrappers.transform_action import ClipAction
