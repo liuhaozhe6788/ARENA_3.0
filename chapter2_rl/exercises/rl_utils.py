@@ -7,7 +7,6 @@ from IPython.display import HTML
 
 from gymnasium.wrappers import (
     ClipAction,
-    FrameStack,
     GrayScaleObservation,
     NormalizeObservation,
     NormalizeReward,
@@ -15,6 +14,8 @@ from gymnasium.wrappers import (
     TransformObservation,
     TransformReward,
 )
+
+from gymnasium.wrappers.frame_stack import FrameStack
 
 def make_env(
     env_id: str,
