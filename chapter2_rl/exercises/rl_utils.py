@@ -5,7 +5,7 @@ from tqdm import tqdm
 import numpy as np
 from IPython.display import HTML
 
-from gymnasium.wrappers.transform_observation import TransformObservation, ResizeObservation, GrayScaleObservation, NormalizeObservation
+from gymnasium.wrappers.transform_observation import TransformObservation, ResizeObservation, GrayscaleObservation, NormalizeObservation
 from gymnasium.wrappers.transform_action import ClipAction
 from gymnasium.wrappers.transform_reward import TransformReward, NormalizeReward
 
