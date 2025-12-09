@@ -3,16 +3,11 @@ import gymnasium as gym
 import numpy as np
 import pandas as pd
 import plotly.express as px
-from gymnasium.wrappers import (
-    ClipAction,
-    FrameStack,
-    GrayScaleObservation,
-    NormalizeObservation,
-    NormalizeReward,
-    ResizeObservation,
-    TransformObservation,
-    TransformReward,
-)
+from gymnasium.wrappers.transform_observation import TransformObservation, ResizeObservation, GrayscaleObservation
+from gymnasium.wrappers.stateful_observation import FrameStackObservation, NormalizeObservation
+from gymnasium.wrappers.transform_action import ClipAction
+from gymnasium.wrappers.transform_reward import TransformReward
+from gymnasium.wrappers.stateful_reward import NormalizeReward
 from IPython.display import display
 
 Arr = np.ndarray
@@ -304,7 +299,7 @@ def prepare_atari_env(env: gym.Env):
     env = ClipRewardEnv(env)
     env = ResizeObservation(env, shape=(84, 84))
     env = GrayScaleObservation(env)
-    env = FrameStack(env, num_stack=4)
+    env = FrameStackObservation(env, stack_size=4)
     return env
 
 
